@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-header/>
-      <div class="content">
+      <div class="container">
           <hr>
           Content Kısmı
           <h1>{{name}}</h1>
@@ -27,7 +27,13 @@ import {ref} from 'vue'
 
 </script>
 <style>
-    h1{
-      color:green;
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    .container{
+      min-height: 100vh;
+      padding: 30px;
     }
 </style>

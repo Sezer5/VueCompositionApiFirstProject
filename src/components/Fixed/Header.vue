@@ -1,11 +1,20 @@
 <template>
-    Deneme Header
+    <header>
+        <div>
+            Header
+        </div>
+    </header>
 </template>
 
 <script>
 
 </script>
 
-<style>
-
+<style scoped>
+    header{
+        background: lightblue;
+        color:white;
+        font-size: 35px;
+        padding: 30px;
+    }
 </style>
