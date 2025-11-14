@@ -44,4 +44,12 @@ import {ref} from 'vue'
       min-height: 100vh;
       padding: 30px;
     }
+    button{
+      padding: 10px;
+      border:none;
+      background-color: #40b27f;
+      color:white;
+      border-radius: 30px;
+      margin:20px;
+    }
 </style>
