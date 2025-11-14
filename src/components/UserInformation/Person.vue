@@ -3,15 +3,16 @@
         <h2>Kişi Bilgileri</h2>
         <ul>
             <li>
-                <span>Adınız:{{ name }}</span>&nbsp;&nbsp;&nbsp;
-                <span>Soyadınız:{{ lastName }}</span>
+                <span class="forProps">Adınız:{{ name }}</span>
+                <span class="forProps">Soyadınız:{{ lastName }}</span>
+                <span class="forProps">Yaşınız:{{ personAge }}</span>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-    const props = defineProps(['name','lastName'])
+    const props = defineProps({name:String,lastName:String,personAge:Number})
 </script>
 
 <style scoped>
@@ -29,5 +30,8 @@
     }
     span{
         font-weight: bold;
+    }
+    .forProps{
+        display: block;
     }
 </style>
