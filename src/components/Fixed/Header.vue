@@ -13,7 +13,7 @@
 <style scoped>
     header{
         background: lightblue;
-        color:white;
+        color:#228837;
         font-size: 35px;
         padding: 30px;
     }
