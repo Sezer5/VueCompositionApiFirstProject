@@ -14,7 +14,25 @@
 
 <script setup>
     const emit=defineEmits(['update-lastname'])
-    const props = defineProps({name:String,lastName:String,personAge:Number});
+    const props = defineProps({
+        name:{
+            type:String,
+            required:true,
+            default:'Cahit'
+        },
+        lastName:String,
+        personAge:{
+            type:Number,
+            required:true,
+            validator(value){
+                if(value > 34){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+    });
     const updateLastname = ()=>{
         // props.lastName="Deneme";
         emit('update-lastname','deneme');

@@ -28,7 +28,7 @@ import {ref} from 'vue'
     const data=reactive({
       name:'Sezer',
       lastName:'Ünalmış',
-      age:'35'
+      age:35
     });
     const name=ref('Sezer');
     const updateName = ()=>{
