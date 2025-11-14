@@ -2,7 +2,7 @@
   <div>
     <app-header/>
       <div class="container">
-          <Person :name="data.name" lastName="Sezer" :personAge="data.age"/>
+          <Person :name="data.name" :lastName="data.lastName" :personAge="data.age" @update-lastname="updateLastname"/>
           <button @click="updateName">Adı Güncelle</button>
           <h1>{{name}}</h1>
       </div>
@@ -27,11 +27,15 @@ import {ref} from 'vue'
     import {reactive} from 'vue'
     const data=reactive({
       name:'Sezer',
+      lastName:'Ünalmış',
       age:'35'
     });
     const name=ref('Sezer');
     const updateName = ()=>{
       data.name='Seda';
+    }
+    const updateLastname = (lastName)=>{
+      data.lastName=lastName;
     }
 
 </script>

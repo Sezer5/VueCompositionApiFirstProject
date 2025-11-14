@@ -8,11 +8,17 @@
                 <span class="forProps">Yaşınız:{{ personAge }}</span>
             </li>
         </ul>
+        <button @click="updateLastname">Soyadı Değiştir</button>
     </div>
 </template>
 
 <script setup>
-    const props = defineProps({name:String,lastName:String,personAge:Number})
+    const emit=defineEmits(['update-lastname'])
+    const props = defineProps({name:String,lastName:String,personAge:Number});
+    const updateLastname = ()=>{
+        // props.lastName="Deneme";
+        emit('update-lastname','deneme');
+    }
 </script>
 
 <style scoped>
