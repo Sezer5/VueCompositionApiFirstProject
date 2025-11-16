@@ -20,6 +20,11 @@
                 <h2>Deneme Slotu</h2>
               </template>
          </Studentscore>
+         <button @click="activeComp=StudentOne">Öğrenci 1</button>
+         <button @click="activeComp=StudentTwo">Öğrenci 2</button>
+         <!-- <StudentOne v-if="activeComp === StudentOne" />
+         <StudentTwo v-if="activeComp === StudentTwo" /> -->
+         <component :is="activeComp"></component>
       </div>
     <Footer />
   </div>
@@ -33,7 +38,11 @@ import Footer from '@/components/Fixed/Footer.vue'
 import Person from '@/components/UserInformation/Person.vue'
 import Students from '@/components/Students/Students.vue'
 import Studentscore from '@/components/Students/Studentscore.vue'
-import {ref} from 'vue'
+import StudentOne from '@/components/StudentsMath/StudentOne.vue'
+import StudentTwo from '@/components/StudentsMath/StudentTwo.vue'
+import {ref,shallowRef} from 'vue'
+
+const activeComp = shallowRef(StudentOne)
     // export default{
     //     setup(){
     //       const name='Sezer Ünalmış';
