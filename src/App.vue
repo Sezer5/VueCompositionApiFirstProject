@@ -6,7 +6,7 @@
           <!-- <button @click="updateName">Adı Güncelle</button>
           <h1>{{name}}</h1> -->
           <!-- <Students /> -->
-         <Studentscore>
+         <!-- <Studentscore>
               <h3>Slot Dersi</h3>
               <template v-slot:name>
                 
@@ -24,7 +24,8 @@
          <button @click="activeComp=StudentTwo">Öğrenci 2</button>
          <!-- <StudentOne v-if="activeComp === StudentOne" />
          <StudentTwo v-if="activeComp === StudentTwo" /> -->
-         <component :is="activeComp"></component>
+         <!--<component :is="activeComp"></component> -->
+         <Lifecycle v-if="showComponent"/>
       </div>
     <Footer />
   </div>
@@ -40,8 +41,13 @@ import Students from '@/components/Students/Students.vue'
 import Studentscore from '@/components/Students/Studentscore.vue'
 import StudentOne from '@/components/StudentsMath/StudentOne.vue'
 import StudentTwo from '@/components/StudentsMath/StudentTwo.vue'
+import Lifecycle from '@/components/Cycle/Lifecycle.vue'
 import {ref,shallowRef} from 'vue'
+const showComponent = ref(true)
 
+setTimeout(()=>{
+    showComponent.value=false;
+},4000)
 const activeComp = shallowRef(StudentOne)
     // export default{
     //     setup(){
