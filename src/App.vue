@@ -2,9 +2,11 @@
   <div>
     <app-header/>
       <div class="container">
-          <Person :name="data.name" :lastName="data.lastName" :personAge="data.age" @update-lastname="updateLastname"/>
-          <button @click="updateName">Adı Güncelle</button>
-          <h1>{{name}}</h1>
+          <!-- <Person :name="data.name" :lastName="data.lastName" :personAge="data.age" @update-lastname="updateLastname"/> -->
+          <!-- <button @click="updateName">Adı Güncelle</button>
+          <h1>{{name}}</h1> -->
+          <Students :students="students"/>
+          <button @click="updateStudent">İlk Öğrencinin Puanını Güncelle</button>
       </div>
     <Footer />
   </div>
@@ -16,6 +18,7 @@
 <script setup>
 import Footer from '@/components/Fixed/Footer.vue'
 import Person from '@/components/UserInformation/Person.vue'
+import Students from '@/components/Students/Students.vue'
 import {ref} from 'vue'
     // export default{
     //     setup(){
@@ -25,17 +28,30 @@ import {ref} from 'vue'
 
     // }
     import {reactive} from 'vue'
-    const data=reactive({
+    const students=reactive([{
+      id:1,
       name:'Sezer',
-      lastName:'Ünalmış',
-      age:35
-    });
+      score:65
+    },
+    {
+      id:2,
+      name:'Seda',
+      score:75
+    },
+    {
+      id:3,
+      name:'Cahit',
+      score:85
+    }]);
     const name=ref('Sezer');
     const updateName = ()=>{
       data.name='Seda';
     }
     const updateLastname = (lastName)=>{
       data.lastName=lastName;
+    }
+    const updateStudent = ()=>{
+      students[0].score=70;
     }
 
 </script>
