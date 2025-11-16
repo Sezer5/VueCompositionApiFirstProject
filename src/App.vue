@@ -7,11 +7,18 @@
           <h1>{{name}}</h1> -->
           <!-- <Students /> -->
          <Studentscore>
-              <ul>
-                  <li v-for="student in students" :key="student.id">
-                      <span>{{student.name}} :</span><span>{{student.score}}</span>
-                  </li>
-              </ul>
+              <h3>Slot Dersi</h3>
+              <template v-slot:name>
+                
+                <ul>
+                    <li v-for="student in students" :key="student.id">
+                        <span>{{student.name}} :</span><span>{{student.score}}</span>
+                    </li>
+                </ul>
+              </template>
+              <template v-slot:example>
+                <h2>Deneme Slotu</h2>
+              </template>
          </Studentscore>
       </div>
     <Footer />
