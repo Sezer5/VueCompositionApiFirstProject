@@ -5,8 +5,8 @@
           <!-- <Person :name="data.name" :lastName="data.lastName" :personAge="data.age" @update-lastname="updateLastname"/> -->
           <!-- <button @click="updateName">Adı Güncelle</button>
           <h1>{{name}}</h1> -->
-          <Students :students="students"/>
-          <button @click="updateStudent">İlk Öğrencinin Puanını Güncelle</button>
+          <Students />
+          
       </div>
     <Footer />
   </div>
@@ -27,7 +27,7 @@ import {ref} from 'vue'
     //     }
 
     // }
-    import {reactive} from 'vue'
+    import {reactive,provide} from 'vue'
     const students=reactive([{
       id:1,
       name:'Sezer',
@@ -53,7 +53,7 @@ import {ref} from 'vue'
     const updateStudent = ()=>{
       students[0].score=70;
     }
-
+    provide('students',{students,updateStudent})
 </script>
 <style>
     *{

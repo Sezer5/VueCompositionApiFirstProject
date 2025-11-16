@@ -1,10 +1,10 @@
 <template>
-    <StudentsList :students="students"/>
+    <StudentsList />
 </template>
 
 <script setup>
     import StudentsList from '@/components/Students/StudentsList.vue'
-    const props=defineProps(['students'])
+    
 </script>
 
 <style>
