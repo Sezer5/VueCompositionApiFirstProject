@@ -5,8 +5,14 @@
           <!-- <Person :name="data.name" :lastName="data.lastName" :personAge="data.age" @update-lastname="updateLastname"/> -->
           <!-- <button @click="updateName">Adı Güncelle</button>
           <h1>{{name}}</h1> -->
-          <Students />
-          
+          <!-- <Students /> -->
+         <Studentscore>
+              <ul>
+                  <li v-for="student in students" :key="student.id">
+                      <span>{{student.name}} :</span><span>{{student.score}}</span>
+                  </li>
+              </ul>
+         </Studentscore>
       </div>
     <Footer />
   </div>
@@ -19,6 +25,7 @@
 import Footer from '@/components/Fixed/Footer.vue'
 import Person from '@/components/UserInformation/Person.vue'
 import Students from '@/components/Students/Students.vue'
+import Studentscore from '@/components/Students/Studentscore.vue'
 import {ref} from 'vue'
     // export default{
     //     setup(){
