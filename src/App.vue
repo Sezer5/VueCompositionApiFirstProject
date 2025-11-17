@@ -2,7 +2,8 @@
   <div>
     <app-header/>
       <div class="container">
-          <ContactForm />
+          <!-- <ContactForm /> -->
+          <Validation />
       </div>
     <Footer />
   </div>
@@ -14,6 +15,7 @@
 <script setup>
 import Footer from '@/components/Fixed/Footer.vue'
 import ContactForm from '@/components/Contact/ContactForm.vue'
+import Validation from '@/components/Contact/Validation.vue'
 
 </script>
 <style>
