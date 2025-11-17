@@ -48,13 +48,21 @@
             <div class="mb-3">
                 <button class="btn btn-primary">Gönder</button>
             </div>
+            <p v-if="errors.length">
+                <h3>Aşağıdaki Hataları Düzeltiniz!</h3>
+                <ul>
+                    <li v-for="error in errors" :key="error">
+                        {{error}}
+                    </li>
+                </ul>
+            </p>
         </div>
     </form>
 </template>
 
 <script setup>
     import { reactive } from 'vue';
-
+    const errors = reactive([]);
     const formData = reactive({
         name:'',
         lastName:'',
@@ -67,7 +75,21 @@
     });
 
     const submitForm = ()=>{
-        console.log(formData);
+        
+        errors.splice(0);
+
+        if(!formData.name){
+            errors.push('Lütfen isminizi giriniz!')
+        }
+        if(!formData.email){
+            errors.push('Lütfen emailinizi giriniz!')
+        }
+        if(!formData.lastMame){
+            errors.push('Lütfen soy isminizi giriniz!')
+        }
+        if(!errors.length){
+            console.log(formData);
+        }
     }
 </script>
 
