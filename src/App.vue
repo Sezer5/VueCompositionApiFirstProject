@@ -3,7 +3,12 @@
     <app-header/>
       <div class="container">
           <!-- <ContactForm /> -->
-          <Validation />
+          <!-- <Validation /> -->
+           <div>
+              <button @click="activeComp=Users">Kullanıcılar</button>
+              <button @click="activeComp=AddUser">Kullanıcı Ekle</button>
+           </div>
+           <component :is="activeComp"/>
       </div>
     <Footer />
   </div>
@@ -16,6 +21,14 @@
 import Footer from '@/components/Fixed/Footer.vue'
 import ContactForm from '@/components/Contact/ContactForm.vue'
 import Validation from '@/components/Contact/Validation.vue'
+import Users from '@/components/User/Users.vue'
+import AddUser from '@/components/User/AddUser.vue'
+import { shallowRef } from 'vue'
+
+const activeComp = shallowRef(Users)
+
+
+
 
 </script>
 <style>
