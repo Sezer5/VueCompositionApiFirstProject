@@ -1,0 +1,34 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"Sezer",
+            "lastname":"Ünalmış"
+        },
+        {
+            "id":2,
+            "name":"Seda",
+            "lastname":"Ünalmış"
+        },
+        {
+            "id":3,
+            "name":"Kevser",
+            "lastname":"Ünalmış"
+        },
+        {
+            "id":4,
+            "name":"Cahit",
+            "lastname":"Ünalmış"
+        },
+        {
+            "id":5,
+            "name":"Sacit",
+            "lastname":"Ünalmış"
+        },
+        {
+            "id":6,
+            "name":"Cemil",
+            "lastname":"Ünalmış"
+        }
+    ]
+}
